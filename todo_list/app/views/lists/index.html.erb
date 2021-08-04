@@ -15,7 +15,11 @@
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.item %></td>
-        <td><%= list.done %></td>
+        <% if list.done == "1" %>
+          <td>Completed</td>
+        <% else %>
+         <td> </td>
+         <% end %>
         <td><%= link_to 'Show', list %></td>
         <td><%= link_to 'Edit', edit_list_path(list) %></td>
         <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
