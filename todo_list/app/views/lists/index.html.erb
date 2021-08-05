@@ -7,7 +7,7 @@
     <tr>
       <th>Item</th>
       <th>Done</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -17,15 +17,12 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
-        <td><%= list.item %></td>
+        <td><%= link_to list.item, list %></td>
         <% if list.done == "1" %>
           <td>Completed</td>
         <% else %>
          <td>in Progress</td>
          <% end %>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

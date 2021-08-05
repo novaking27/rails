@@ -20,12 +20,13 @@
     <%= form.label :done %>
     <%= form.check_box :done %>
   </div>
-
+ <br />
   <div class="actions">
   <% if list.new_record? %>
-    <%= form.submit "Create"%>
+    <%= form.submit "Create", class: "btn btn-primary"%>
   <% else %>
-    <%= form.submit "Update"%>
+    <%= form.submit "Update", class: "btn btn-primary"%> |
+    <%= link_to 'Delete',  list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
   <% end %>
   </div>
 <% end %>
